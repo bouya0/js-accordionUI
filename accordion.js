@@ -32,4 +32,12 @@
     hookName: "#js-manga",
     tagName: "p",
   });
+  const dummyAccordion = new Accordion({
+    hookName: "#js-accordion",
+    tagName: "a",
+  });
+  const miniAccordion = new Accordion({
+    hookName: "#js-accordion-mini",
+    tagName: "dt",
+  });
 })();
