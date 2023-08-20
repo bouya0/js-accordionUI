@@ -1,28 +1,35 @@
 (() => {
-  const $elm = document.querySelector("#js-accordion");
-  const $trigger = $elm.getElementsByTagName("a");
+  class Accordion {
+    constructor(obj) {
+      console.log("obj", obj.hookName);
 
-  const triggerLen = $trigger.length;
-  for (let index = 0; index < triggerLen; index++) {
-    $trigger[index].addEventListener("click", (e) => clickHandler(e));
+      const $elm = document.querySelector(obj.hookName);
+      const $trigger = $elm.getElementsByTagName(obj.tagName);
+
+      const triggerLen = $trigger.length;
+      for (let index = 0; index < triggerLen; index++) {
+        $trigger[index].addEventListener("click", (e) => this.clickHandler(e));
+      }
+    }
+
+    //クリックしたら実行される処理
+    clickHandler = (e) => {
+      e.preventDefault();
+
+      const $target = e.currentTarget;
+      const $content = $target.nextElementSibling;
+
+      if ($content.style.display === "block") {
+        $content.style.display = "none";
+      } else {
+        $content.style.display = "block";
+      }
+      console.log("Clicked!");
+    };
   }
 
-  //クリックしたら実行される処理
-  const clickHandler = (e) => {
-    e.preventDefault();
-
-    const $target = e.currentTarget;
-    const $content = $target.nextElementSibling;
-
-    if ($content.style.display === "block") {
-      $content.style.display = "none";
-    } else {
-      $content.style.display = "block";
-    }
-    console.log("Clicked!");
-  };
+  const mangaAccordion = new Accordion({
+    hookName: "#js-manga",
+    tagName: "p",
+  });
 })();
-
-// const firstQuestion = e.target;
-// const $content = $elm.getElementsByClassName("accordion-contents");
-// $content[0].style.display = "none";
