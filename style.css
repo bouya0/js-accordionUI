@@ -8,15 +8,12 @@
   margin: 0;
   padding: 10px;
   display: block;
-  background: #333;
+  background: #111;
   color: #fff;
   border-top: 1px solid #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.accordion-trigger:hover {
-  background-color: #555;
 }
 .accordion-trigger.is-active {
   background-color: #666;
@@ -45,4 +42,36 @@ dd::before {
 /* i */
 i {
   font-size: 38px;
+}
+
+/* twitter */
+.twitter-open {
+  background-color: #1da1f2;
+}
+
+/* instagram */
+.instagram-open {
+  /* background-color: #e4405f; */
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #f7dd72 20%,
+    #bc2a8d 45%,
+    #833ab4 85%
+  );
+}
+
+/* facebook */
+.facebook-open {
+  background-color: #1877f2;
+}
+
+/* youtube */
+.youtube-open {
+  background-color: #ff0000;
+}
+
+/* tiktok */
+.tiktok-open {
+  background-color: #000000; /* TikTokのロゴの黒色部分を参考に設定 */
 }

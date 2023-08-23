@@ -18,13 +18,16 @@
 
       const $target = e.currentTarget;
       const $content = $target.nextElementSibling;
+      const platform = $target.parentNode.id.replace("js-", "");
 
       if ($content.style.maxHeight && $content.style.maxHeight !== "0px") {
         $content.style.maxHeight = "0";
         $content.style.opacity = "0";
+        $target.classList.remove(`${platform}-open`);
       } else {
         $content.style.maxHeight = $content.scrollHeight + "px"; // contentの高さに合わせてmaxHeightを設定
         $content.style.opacity = "1";
+        $target.classList.add(`${platform}-open`);
       }
       console.log("Clicked!");
     };
