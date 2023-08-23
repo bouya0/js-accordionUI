@@ -4,17 +4,42 @@
 }
 
 .accordion-trigger {
+  height: 50px;
   margin: 0;
   padding: 10px;
   display: block;
   background: #333;
   color: #fff;
   border-top: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.accordion-trigger:hover {
+  background-color: #555;
+}
+.accordion-trigger.is-active {
+  background-color: #666;
+}
 .accordion-contents {
   margin: 0;
   padding: 10px;
   border: 1px solid #ccc;
   display: none;
+}
+
+/* dl,dt,dd */
+dt {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+dd::before {
+  content: "・";
+  margin-right: 5px;
+}
+
+/* i */
+i {
+  font-size: 38px;
 }

@@ -1,7 +1,7 @@
 (() => {
   class Accordion {
     constructor(obj) {
-      console.log("obj", obj.hookName);
+      // console.log("obj", obj.hookName);
 
       const $elm = document.querySelector(obj.hookName);
       const $trigger = $elm.getElementsByTagName(obj.tagName);
@@ -28,16 +28,24 @@
     };
   }
 
-  const mangaAccordion = new Accordion({
-    hookName: "#js-manga",
+  const twitterAccordion = new Accordion({
+    hookName: "#js-twitter",
+    tagName: "p"
+  });
+  const instagramAccordion = new Accordion({
+    hookName: "#js-instagram",
+    tagName: "a"
+  });
+  const facebookAccordion = new Accordion({
+    hookName: "#js-facebook",
     tagName: "p",
   });
-  const dummyAccordion = new Accordion({
-    hookName: "#js-accordion",
+  const youtubeAccordion = new Accordion({
+    hookName: "#js-youtube",
     tagName: "a",
   });
-  const miniAccordion = new Accordion({
-    hookName: "#js-accordion-mini",
-    tagName: "dt",
+  const tiktokAccordion = new Accordion({
+    hookName: "#js-tiktok",
+    tagName: "a",
   });
 })();
