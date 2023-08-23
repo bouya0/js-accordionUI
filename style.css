@@ -75,3 +75,11 @@ i {
 .tiktok-open {
   background-color: #000000; /* TikTokのロゴの黒色部分を参考に設定 */
 }
+
+@media (max-width: 767px) {
+  .accordion {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+}
