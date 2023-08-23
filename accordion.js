@@ -19,10 +19,12 @@
       const $target = e.currentTarget;
       const $content = $target.nextElementSibling;
 
-      if ($content.style.display === "block") {
-        $content.style.display = "none";
+      if ($content.style.maxHeight && $content.style.maxHeight !== "0px") {
+        $content.style.maxHeight = "0";
+        $content.style.opacity = "0";
       } else {
-        $content.style.display = "block";
+        $content.style.maxHeight = $content.scrollHeight + "px"; // contentの高さに合わせてmaxHeightを設定
+        $content.style.opacity = "1";
       }
       console.log("Clicked!");
     };
@@ -30,11 +32,11 @@
 
   const twitterAccordion = new Accordion({
     hookName: "#js-twitter",
-    tagName: "p"
+    tagName: "p",
   });
   const instagramAccordion = new Accordion({
     hookName: "#js-instagram",
-    tagName: "a"
+    tagName: "a",
   });
   const facebookAccordion = new Accordion({
     hookName: "#js-facebook",

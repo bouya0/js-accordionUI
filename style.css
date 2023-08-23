@@ -25,7 +25,10 @@
   margin: 0;
   padding: 10px;
   border: 1px solid #ccc;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out; /* この行を追加 */
+  opacity: 0;
 }
 
 /* dl,dt,dd */
