@@ -1,8 +1,23 @@
 (() => {
+  document.cookie =
+    "key=value; expires=Thu, 01 Jan 2025 00:00:00 UTC; path=/; SameSite=Lax";
+  function getCookie(name) {
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+    return null;
+  }
+
+  // 使い方:
+  let value = getCookie("expires");
+  if (value) {
+    console.log("keyのCookieの値は" + value + "です。");
+  } else {
+    console.log("keyのCookieは存在しません。");
+  }
+
   class Accordion {
     constructor(obj) {
-      // console.log("obj", obj.hookName);
-
       const $elm = document.querySelector(obj.hookName);
       const $trigger = $elm.getElementsByTagName(obj.tagName);
 

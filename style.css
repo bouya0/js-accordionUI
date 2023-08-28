@@ -1,10 +1,16 @@
 body {
   margin: 0;
+  font-style: normal;
+  font-family: Times New Roman, "メイリオ";
 }
 
 .header {
   text-align: center;
   padding: 30px 0;
+}
+
+.header > h1 {
+  font-size: 40px;
 }
 
 .accordion {
@@ -33,7 +39,7 @@ body {
   border: 1px solid #ccc;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out; /* この行を追加 */
+  transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
   opacity: 0;
 }
 
@@ -90,7 +96,7 @@ i {
     padding: 0 30px;
   }
   .header > h1 {
-    font-size: 20px;
+    font-size: 30px;
   }
   .accordion {
     width: 100%;
